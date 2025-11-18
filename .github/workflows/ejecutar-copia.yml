@@ -17,8 +17,8 @@ jobs:
         run: mv backup.tar.gz ./backup/
       - name: Confirmar y subir los cambios al repositorio
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global user.name 'andrei'
+          git config --global user.email 'andreibadea2513@gmail.com'
           git add ./backup/backup.tar.gz
           git commit -m 'Agregar copia de seguridad comprimida de la carpeta datos'
           git push origin main
