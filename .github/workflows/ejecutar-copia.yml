@@ -1,4 +1,4 @@
-name: Copia de seguridad comprimida de la carpeta datos a una llamada backup y guardarla
+name: Copia de seguridad comprimida de la carpeta datos a una llamada backup, crearla si no esta y guardarla
 on:
   push:
     branches:
@@ -11,6 +11,8 @@ jobs:
         uses: actions/checkout@v5
       - name: Crear copia de seguridad comprimida de la carpeta datos
         run: tar -czf backup.tar.gz datos
+      - name: Crear carpeta backup si no existe
+        run: mkdir -p backup
       - name: Mover la copia de seguridad al repositorio
         run: mv backup.tar.gz ./backup/
       - name: Confirmar y subir los cambios al repositorio
