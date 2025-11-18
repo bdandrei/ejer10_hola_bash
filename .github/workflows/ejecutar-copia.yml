@@ -13,3 +13,8 @@ jobs:
         run: mkdir -p backup
       - name: Crear copia de seguridad comprimida de la carpeta datos
         run: tar -czf backup/backup.tar.gz datos
+      - name: Guardar el backup como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: backup-de-datos
+          path: backup/backup.tar.gz
