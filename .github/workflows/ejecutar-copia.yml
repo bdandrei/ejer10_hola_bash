@@ -1,4 +1,4 @@
-name: Copia de seguridad comprimida de la carpeta datos a una llamada backup y guardarla en el repositorio
+name: Copia de seguridad comprimida de la carpeta datos a una llamada backup y guardarla
 on:
   push:
     branches:
