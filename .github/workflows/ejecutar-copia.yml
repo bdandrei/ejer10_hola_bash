@@ -9,16 +9,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
-      - name: Crear copia de seguridad comprimida de la carpeta datos
-        run: tar -czf backup.tar.gz datos
       - name: Crear carpeta backup si no existe
         run: mkdir -p backup
-      - name: Mover la copia de seguridad al repositorio
-        run: mv backup.tar.gz ./backup/
-      - name: Confirmar y subir los cambios al repositorio
-        run: |
-          git config --global user.name 'andrei'
-          git config --global user.email 'andreibadea2513@gmail.com'
-          git add ./backup/backup.tar.gz
-          git commit -m 'Agregar copia de seguridad comprimida de la carpeta datos'
-          git push origin main
+      - name: Crear copia de seguridad comprimida de la carpeta datos
+        run: tar -czf backup/backup.tar.gz datos
